@@ -94,7 +94,7 @@ Node<T>* insertAtPos(Node<T> *head, int i, T data){
 
 template <typename T>
 Node<T>* deleteFirstNode(Node<T> *head){
-    if(head == NULL) // Corrected condition
+    if(head == NULL) 
         return NULL;
     Node<T>* temp = head;
     head = temp->next;
@@ -102,6 +102,22 @@ Node<T>* deleteFirstNode(Node<T> *head){
     return head;
 }
 
+template <typename T>
+Node<T>* deleteLastNode(Node<T>* head){
+	if(head==NULL)return NULL;
+	if(head->next==NULL){
+		delete head;
+		return NULL;
+	}
+	
+	Node<T>* second_last=head;
+	while(second_last->next->next !=NULL)second_last=second_last->next;
+	
+	delete(second_last->next);
+	second_last->next=NULL;
+	
+	return head;
+}
 
 
 int main(){
@@ -128,6 +144,11 @@ int main(){
     cout<<"after deleting the head"<<endl;
     head=deleteFirstNode(head);
     printList(head);
+    
+    cout<<"after deleting the tail"<<endl;
+    head=deleteLastNode(head);
+    printList(head);
+
 
     Node<int> *userHead = userData<int>();
     cout << "User input list:" << endl;
