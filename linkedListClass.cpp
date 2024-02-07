@@ -121,7 +121,7 @@ Node<T>* deleteLastNode(Node<T>* head){
 
 template <typename T>
 Node<T>* deleteNode(Node<T>* head, int i){
-   if(i<=0){
+   if(i<0){
       return head;
    }
    if(i==1 && head){
@@ -184,8 +184,13 @@ int main(){
     printList(head);
     
     cout<<"after deleting at any position"<<endl;
-    head=deleteNode(head, 2);
+    head=deleteNode(head,0);
     printList(head);
+    
+    cout<<"after deleting at any position"<<endl;
+    head=deleteNode(head,1);
+    printList(head);
+    
     
 
 
