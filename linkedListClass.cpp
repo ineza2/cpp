@@ -20,7 +20,8 @@ void printList(Node<T> *head){
         head=head->next;
         count++;
     }
-    cout<<"nbr of elements: "<<count<<endl;
+//    cout<<"nbr of elements: "<<count<<endl;
+    cout<<"\n"<<endl;
 }
 
 template <typename T>
@@ -91,6 +92,18 @@ Node<T>* insertAtPos(Node<T> *head, int i, T data){
     return head;
 }
 
+template <typename T>
+Node<T>* deleteFirstNode(Node<T> *head){
+    if(head == NULL) // Corrected condition
+        return NULL;
+    Node<T>* temp = head;
+    head = temp->next;
+    delete temp;
+    return head;
+}
+
+
+
 int main(){
     Node<int> *n1=new Node<int>(10);
     Node<int> *n2= new Node<int>(20);
@@ -108,14 +121,18 @@ int main(){
     head=addAtTail(head, 22);
     printList(head);
 
-    cout<<"after inserting element at position 4"<<endl;
+    cout<<"after inserting element at position"<<endl;
     head=insertAtPos(head,4,250);
+    printList(head);
+    
+    cout<<"after deleting the head"<<endl;
+    head=deleteFirstNode(head);
     printList(head);
 
     Node<int> *userHead = userData<int>();
     cout << "User input list:" << endl;
     printList(userHead);
-    
+//    
     delete n1;
     delete n2;
     delete n3;
