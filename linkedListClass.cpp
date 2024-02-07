@@ -119,6 +119,40 @@ Node<T>* deleteLastNode(Node<T>* head){
 	return head;
 }
 
+template <typename T>
+Node<T>* deleteNode(Node<T>* head, int i){
+   if(i<=0){
+      return head;
+   }
+   if(i==1 && head){
+    Node<T>* newHead = head->next;
+    head->next = NULL;
+
+    delete head;
+    return newHead;
+   }
+   
+  Node<T>* curr = head;
+   int count = 1;
+   while(count<i-1 && curr!=NULL){
+    curr = curr->next;
+    count++;
+   }
+       if(curr && curr->next){
+     Node<T> *temp = curr->next;
+     
+     curr->next = curr->next->next;
+     temp->next=NULL;
+     
+     delete temp;
+     
+     return head;
+   }
+   return head;
+}
+
+
+
 
 int main(){
     Node<int> *n1=new Node<int>(10);
@@ -148,6 +182,11 @@ int main(){
     cout<<"after deleting the tail"<<endl;
     head=deleteLastNode(head);
     printList(head);
+    
+    cout<<"after deleting at any position"<<endl;
+    head=deleteNode(head, 2);
+    printList(head);
+    
 
 
     Node<int> *userHead = userData<int>();
