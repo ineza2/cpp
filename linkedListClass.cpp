@@ -1,26 +1,3 @@
-//#include <iostream>
-//using namespace std;
-//class Student {
-//	public:
-//    string name;
-//    int age;
-//    string school;
-//    Student() {}
-//    Student(int a, string n, string s) {
-//        age=a;
-//        name=n;
-//        school=s;
-//    }
-//    void printDetails () {
-//    cout<<"age:"<<age<<" name:"<<name<<" school:"<<endl;
-//    }
-//};
-//int main () {
-//    Student student1(18, "Henri", "RCA");
-//    student1.printDetails();
-//return (0);
-//} 
-
 #include<iostream>
 using namespace std;
 template <typename T>
@@ -123,43 +100,3 @@ delete n1;
 	return 0;
 }
 
-
-//#include<iostream>
-//using namespace std;
-//class Student{
-//	public:
-//	int age;
-//	string name;
-//	string school;
-//	Student() {}
-//	Student (int a, string n, string s){
-//		age = a;
-//		name = n;
-//		school = s;
-////		next = NULL;
-//	}
-//	void printDetails() {
-//		cout << "age: " << age << ", name: " << name << ", school: " << school << endl;	
-//	}
-//};
-//void printlist (Student *head){
-//	while (head != NULL){
-//		cout << "age: " <<head -> age << ", name: " << head -> name << ", school: " << head -> school << endl;	
-//	}
-//}
-//int main() {
-//	Student s1 (18, "Mary", "RCA");
-//	Student s2 (10, "Mike", "RCA");
-//	Student *s3 = new Student(20, "Divin", "RCA");
-//	Student *s4 = new Student(25, "D'Amour", "RCA");
-//	Student s5(17, "Kamanzi", "Nyabihu tvet");
-//	s1.next = &s2;
-//	s2.next = s3;
-//	s3.next = s4;
-//	s4.next = &s5;
-//	Student *head = s1;
-//	printlist(head);
-//		
-//	delete s3;
-//	return 0;
-//}
