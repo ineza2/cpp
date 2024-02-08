@@ -64,6 +64,23 @@ Node* reverse(Node *head){
         return head; 
 }
 
+//next=7
+//current->next = null
+//prev=3
+//current=7
+//
+//next= 45
+//current->next=3
+//prev=7
+//current=45
+//
+//next= null
+//current->next = 7
+//prev=45
+//current=null
+//
+//head = 45
+
 
 int main(){
 	Node* n1 = new Node;
