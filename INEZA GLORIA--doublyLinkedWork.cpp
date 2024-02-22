@@ -49,22 +49,6 @@ node* reverse(node* head)
 }
 
 
-node* insertMiddle(node* prev, int data) {
-    if(prev == NULL)
-        return NULL;
-
-    node* newNode = new node();
-    newNode->data = data;
-    newNode->next = prev->next;
-    prev->next = newNode;
-    newNode->prev = prev;
-
-    if (newNode->next != NULL)
-        newNode->next->prev = newNode;
-
-    return newNode;
-}
-
 node* insertAfter(node* prevNode, int newData) {
     if (prevNode == NULL) {
         cout << "The given previous node cannot be NULL";
@@ -132,9 +116,9 @@ int main(){
     struct node *two = new node();
     struct node *three = new node();
 
-    one->data = 11;
-    two->data = 8;
-    three->data = 45;
+    one->data = 51;
+    two->data = 78;
+    three->data = 145;
     
     one->next = two;
     one->prev = NULL;
@@ -148,37 +132,27 @@ int main(){
     
     head = one;
     
-    cout<<"inserting at the head"<<endl;
     
     head = insertAtHead(head, 98);
     printList(head);
     
-    cout<<"reversing the list"<<endl;
     
     head = reverse(head);
     printList(head);
     
-    cout<<"inserting in the middle"<<endl;
-    
-    head = insertMiddle(two, 56);
-    printList(head);
-    
-    cout<<"inserting after a given node"<<endl;
     
     node* prevNode = head->next;
-    insertAfter(prevNode, 10);
+    insertAfter(prevNode, 87);
     printList(head);
     
-    cout<<"inserting before a given node"<<endl;
     
     node* nextNode = head->next->next;
-    insertBefore(nextNode, 20);
+    insertBefore(nextNode, 50);
 
     
     printList(head);
     
-    cout<<"inserting at the end of the list"<<endl;
-    head = insertAtEnd(head, 8);
+    head = insertAtEnd(head, 12);
     printList(head);
     
     
